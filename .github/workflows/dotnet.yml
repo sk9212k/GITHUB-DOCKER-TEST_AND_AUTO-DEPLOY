@@ -32,7 +32,6 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository:  hasansahinnn/testdeploy
-        snapshot: true
   create_new_container:
     needs: publish_to_docker
     runs-on: ubuntu-latest

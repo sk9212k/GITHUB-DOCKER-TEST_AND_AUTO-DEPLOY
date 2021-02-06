@@ -1,0 +1,27 @@
+name: Deploy Docker CI
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  Test_Build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1.7.2
+      with:
+        dotnet-version: 5.0.100
+    - uses: actions/checkout@v1
+    - name: Build with dotnet
+      working-directory: ./github_docker_auto_deploy_test
+      run: dotnet build --configuration Release
+    - name: Run Tests
+      working-directory: ./github_docker_auto_deploy_test
+      run: dotnet test
+   
+      
+  

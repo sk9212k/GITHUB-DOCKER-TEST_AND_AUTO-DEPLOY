@@ -38,7 +38,7 @@ namespace github_docker_auto_deploy_test_TestProject
                 response.EnsureSuccessStatusCode();
 
                 response.StatusCode.Should().Be(HttpStatusCode.OK);
-                responseData.Should().Be("3");
+                responseData.Should().Be("1");
             }
         }
     }

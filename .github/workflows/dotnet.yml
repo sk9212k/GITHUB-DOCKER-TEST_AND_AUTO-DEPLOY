@@ -9,18 +9,18 @@ on:
       - master
 jobs:
   Test_Build:
-    runs-on: windows-latest
-    env:
-      config: 'Release'
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.5
-    - name: Restore NuGet packages
-      run: nuget restore github_docker_auto_deploy_test/github_docker_auto_deploy_test_TestProject/github_docker_auto_deploy_test_TestProject.csproj
-    - name: Build the Solution
-      run: msbuild github_docker_auto_deploy_test/github_docker_auto_deploy_test_TestProject/github_docker_auto_deploy_test_TestProject.csproj /p:Configuration=Release    
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1.7.2
+      with:
+        dotnet-version: 5.0.100
+    - uses: actions/checkout@v1
+    - name: Build with dotnet
+      working-directory: ./github_docker_auto_deploy_test
+      run: dotnet build --configuration Release
+    - name: Run Tests
+      run: dotnet test
+   
       
   

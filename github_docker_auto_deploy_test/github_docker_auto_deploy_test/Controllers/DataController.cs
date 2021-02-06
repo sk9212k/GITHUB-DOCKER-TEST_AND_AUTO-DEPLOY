@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 namespace github_docker_auto_deploy_test.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    [Route("api/[controller]")]
+    public class DataController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<DataController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public DataController(ILogger<DataController> logger)
         {
             _logger = logger;
         }
@@ -34,6 +34,11 @@ namespace github_docker_auto_deploy_test.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+        [HttpPost]
+        public int Post([FromBody] DataControllerRequest request)
+        {
+            return request.NumberOne+request.NumberTwo;
         }
     }
 }

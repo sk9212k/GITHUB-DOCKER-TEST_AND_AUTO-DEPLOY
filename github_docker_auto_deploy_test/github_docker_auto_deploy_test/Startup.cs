@@ -41,7 +41,7 @@ namespace github_docker_auto_deploy_test
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "github_docker_auto_deploy_test v1"));
+                app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "github_docker_auto_deploy_test v1"); c.RoutePrefix = ""; });
             }
 
             app.UseHttpsRedirection();

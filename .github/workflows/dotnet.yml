@@ -14,11 +14,13 @@ jobs:
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v1.7.2
       with:
-        dotnet-version: 5.0.100
+        dotnet-version: 3.1.201
     - uses: actions/checkout@v1
     - name: Build with dotnet
+      working-directory: ./github_docker_deploy
       run: dotnet build --configuration Release
     - name: Run Tests
+      working-directory: ./github_docker_deploy
       run: dotnet test
   publish_to_docker:
     needs: Test_Build

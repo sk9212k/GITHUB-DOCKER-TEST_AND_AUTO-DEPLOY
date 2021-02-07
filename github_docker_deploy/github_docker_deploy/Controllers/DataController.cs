@@ -35,6 +35,11 @@ namespace github_docker_deploy.Controllers
             })
             .ToArray();
         }
+        [HttpGet("TestString")]
+        public string TestString()
+        {
+            return "Test String";
+        }
         [HttpPost]
         public int Post([FromBody] DataControllerRequest request)
         {

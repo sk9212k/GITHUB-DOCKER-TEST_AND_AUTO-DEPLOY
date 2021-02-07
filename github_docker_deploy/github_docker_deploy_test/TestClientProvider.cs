@@ -1,4 +1,4 @@
-﻿using github_docker_auto_deploy_test;
+﻿using github_docker_deploy;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using System;
@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace github_docker_auto_deploy_test_TestProject
+namespace github_docker_deploy_test
 {
     public class TestClientProvider
     {

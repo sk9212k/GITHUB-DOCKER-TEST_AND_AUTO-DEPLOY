@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace github_docker_auto_deploy_test.Controllers
+namespace github_docker_deploy.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

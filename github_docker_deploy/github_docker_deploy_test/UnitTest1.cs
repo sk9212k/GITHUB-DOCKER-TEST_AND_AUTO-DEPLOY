@@ -1,13 +1,13 @@
 using FluentAssertions;
-using github_docker_auto_deploy_test.Controllers;
 using System;
 using System.Net;
 using System.Net.Http;
 using Xunit;
 using Newtonsoft.Json;
 using System.Text;
+using github_docker_deploy.Controllers;
 
-namespace github_docker_auto_deploy_test_TestProject
+namespace github_docker_deploy_test
 {
     public class UnitTest1
     {

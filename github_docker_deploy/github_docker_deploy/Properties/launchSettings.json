@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:55572",
-      "sslPort": 44321
+      "applicationUrl": "http://localhost:62888",
+      "sslPort": 44390
     }
   },
   "profiles": {
@@ -17,9 +17,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "github_docker_auto_deploy_test": {
+    "github_docker_deploy": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
       "launchBrowser": true,
       "launchUrl": "",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",

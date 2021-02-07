@@ -1,6 +1,6 @@
 using System;
 
-namespace github_docker_auto_deploy_test
+namespace github_docker_deploy
 {
     public class WeatherForecast
     {

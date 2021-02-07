@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace github_docker_auto_deploy_test.Controllers
+namespace github_docker_deploy.Controllers
 {
     public class DataControllerRequest
     {
@@ -14,6 +14,10 @@ namespace github_docker_auto_deploy_test.Controllers
         {
             NumberOne = numberOne;
             NumberTwo = numberTwo;
+        }
+        public DataControllerRequest()
+        {
+
         }
     }
 }

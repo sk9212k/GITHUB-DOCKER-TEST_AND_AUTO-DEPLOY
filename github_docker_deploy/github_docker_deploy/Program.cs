@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace github_docker_auto_deploy_test
+namespace github_docker_deploy
 {
     public class Program
     {

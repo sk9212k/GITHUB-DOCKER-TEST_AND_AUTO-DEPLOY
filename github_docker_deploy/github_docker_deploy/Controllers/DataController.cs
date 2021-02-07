@@ -38,7 +38,7 @@ namespace github_docker_deploy.Controllers
         [HttpPost]
         public int Post([FromBody] DataControllerRequest request)
         {
-            return request.NumberOne+request.NumberTwo-1;
+            return request.NumberOne+request.NumberTwo;
         }
     }
 }

@@ -32,8 +32,7 @@ jobs:
         push: true
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository:  hasansahinnn/testdeploy
-        tags: latest
+        tags: hasansahinnn/testdeploy
   create_new_container:
     needs: publish_to_docker
     runs-on: ubuntu-latest

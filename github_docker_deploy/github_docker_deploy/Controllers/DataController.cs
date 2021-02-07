@@ -13,7 +13,7 @@ namespace github_docker_deploy.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool2", "Mild2", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "a", "b", "c", "d", "e", "f", "g", "h", "j", "k"
         };
 
         private readonly ILogger<DataController> _logger;

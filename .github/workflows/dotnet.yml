@@ -11,7 +11,6 @@ jobs:
   Test_Build:
     runs-on: ubuntu-latest
     steps:
-    - working-directory: ./github_docker_deploy
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v1.7.2
       with:
@@ -20,6 +19,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Run Tests
+      working-directory: ./github_docker_deploy
       run: dotnet test
   publish_to_docker:
     needs: Test_Build

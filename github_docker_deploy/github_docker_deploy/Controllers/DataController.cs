@@ -13,7 +13,7 @@ namespace github_docker_deploy.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "a555", "b5555", "c5555", "d555", "e5555", "f", "g", "h", "j", "k"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
         private readonly ILogger<DataController> _logger;
@@ -38,7 +38,7 @@ namespace github_docker_deploy.Controllers
         [HttpPost]
         public int Post([FromBody] DataControllerRequest request)
         {
-            return request.NumberOne+request.NumberTwo;
+            return request.NumberOne+request.NumberTwo-1;
         }
     }
 }

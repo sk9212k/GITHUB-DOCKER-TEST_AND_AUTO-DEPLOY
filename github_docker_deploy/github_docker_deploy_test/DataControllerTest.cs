@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace github_docker_deploy_test
 {
-    public class UnitTest1
+    public class DataControllerTest
     {
         public DataController _dataController;
-        public UnitTest1()
+        public DataControllerTest()
         {
             _dataController = new DataController();
         }

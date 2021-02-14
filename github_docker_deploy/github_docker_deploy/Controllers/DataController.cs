@@ -16,34 +16,29 @@ namespace github_docker_deploy.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<DataController> _logger;
-
-        public DataController(ILogger<DataController> logger)
-        {
-            _logger = logger;
-        }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public ActionResult<IEnumerable<WeatherForecast>> Get()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Ok(Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
-            .ToArray();
+            .ToArray());
         }
         [HttpGet("TestString")]
-        public string TestString()
+        public ActionResult<string> TestString()
         {
-            return "Test String";
+            return Ok("Test String");
         }
         [HttpPost]
-        public int Post([FromBody] DataControllerRequest request)
+        public ActionResult<int> Post([FromBody] DataControllerRequest request)
         {
-            return request.NumberOne+request.NumberTwo;
+            return Ok(request.NumberOne+request.NumberTwo);
         }
+
     }
 }

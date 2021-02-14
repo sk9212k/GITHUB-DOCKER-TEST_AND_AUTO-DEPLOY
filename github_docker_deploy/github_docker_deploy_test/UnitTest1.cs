@@ -1,45 +1,42 @@
 using FluentAssertions;
-using System;
 using System.Net;
-using System.Net.Http;
 using Xunit;
-using Newtonsoft.Json;
-using System.Text;
 using github_docker_deploy.Controllers;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using github_docker_deploy;
+using System.Threading.Tasks;
 
 namespace github_docker_deploy_test
 {
     public class UnitTest1
     {
+        public DataController _dataController;
+        public UnitTest1()
+        {
+            _dataController = new DataController();
+        }
       
         [Fact]
-        public async System.Threading.Tasks.Task Test_GetAsync()
+        public async Task Test_GetAsync()
         {
-            using (var client = new TestClientProvider().Client)
-            {
+            // Act
+            var okResult = _dataController.Get().Result as OkObjectResult;
 
-                var response = await client.GetAsync("/api/Data");
-
-                response.EnsureSuccessStatusCode();
-
-                response.StatusCode.Should().Be(HttpStatusCode.OK);
-                response.Should().NotBeNull();
-            }
+            // Assert
+            var items = okResult.Value as IEnumerable<WeatherForecast>;
+            items.Should().NotBeNull();
+            okResult.StatusCode.Should().Be((int)HttpStatusCode.OK);
+        
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task Test_PostAsync()
+        public async Task Test_PostAsync()
         {
-            using (var client = new TestClientProvider().Client)
-            {
-
-                var response = await client.PostAsync("/api/Data",new StringContent(JsonConvert.SerializeObject(new DataControllerRequest(1, 2)), Encoding.UTF8,"application/json"));
-                var responseData = response.Content.ReadAsStringAsync().Result;
-                response.EnsureSuccessStatusCode();
-
-                response.StatusCode.Should().Be(HttpStatusCode.OK);
-                responseData.Should().Be("3");
-            }
+            var okResult = _dataController.Post(new DataControllerRequest(1,2)).Result as OkObjectResult;
+            okResult.StatusCode.Should().Be((int)HttpStatusCode.OK);
+            okResult.Value.Should().Be(3);
+       
         }
     }
 }

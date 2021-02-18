@@ -26,5 +26,5 @@ WORKDIR /app
 # copy /out folder from 'build-env' 
 COPY --from=build-env /out .
 
-# Start project  								
+# Start project   								
 ENTRYPOINT ["dotnet", "github_docker_deploy.dll"] 			

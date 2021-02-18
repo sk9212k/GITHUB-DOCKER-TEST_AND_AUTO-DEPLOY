@@ -1,4 +1,5 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1.201-alpine AS build-env  # Use Alpine sdk Core 3.1 and set name 'build-env'
+# Use Alpine sdk Core 3.1 and set name 'build-env'
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1.201-alpine AS build-env  
 RUN apk add --no-cache openssh-client
 
 # Export 80 port

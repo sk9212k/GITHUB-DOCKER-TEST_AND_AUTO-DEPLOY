@@ -47,6 +47,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         key: ${{ secrets.SSH_SSHKEY }}
+        password : ""
         script: |
           docker rm -f $(docker ps -aq -f name=testdeploy)
           docker rmi $(docker images | grep 'hasansahinnn/testdeploy' | awk '{print $3}')

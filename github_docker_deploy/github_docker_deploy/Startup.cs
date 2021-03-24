@@ -27,6 +27,10 @@ namespace github_docker_deploy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddHttpClient("api", c =>
+            {
+                c.BaseAddress = new Uri(Environment.GetEnvironmentVariable("url"));
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "github_docker_auto_deploy_test", Version = "v1" });

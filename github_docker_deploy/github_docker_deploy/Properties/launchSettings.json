@@ -12,7 +12,9 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "welcome",
       "environmentVariables": {
+        "url": "https://webhook.site",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },

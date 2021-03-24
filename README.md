@@ -10,4 +10,9 @@ Part 3 : https://hasansahinn.medium.com/github-actions-auto-test-github-docker-h
 Part 4 : https://hasansahinn.medium.com/publishing-in-dockerhub-and-azure-github-docker-hub-azure-deploy-pipeline-part-4-d6efde5aca1e<br/><br/>
 
 <b>Environment</b><br/>
-Api url modification can be made using launchSettings or docker enviroment.
+Api url modification can be made using launchSettings or docker enviroment.<br/>
+<br/>
+
+
+<b>Launch Url</b><br/>
+<a href="http://20.64.240.214:5000/welcome" target="_blank">http://20.64.240.214:5000/welcome</a>

@@ -7,4 +7,7 @@ In short, when we push to Github, the new version of our application will be dep
 Part 1 : https://medium.com/@hasansahinn/install-docker-on-azure-virtual-machine-github-docker-hub-azure-deploy-pipeline-part-1-4b1e73dd0d7<br/>
 Part 2 : https://hasansahinn.medium.com/docker-file-and-net-core-project-github-docker-hub-azure-deploy-pipeline-part-2-4526bc02581d<br/>
 Part 3 : https://hasansahinn.medium.com/github-actions-auto-test-github-docker-hub-azure-deploy-pipeline-part-3-105d9002acae<br/>
-Part 4 : https://hasansahinn.medium.com/publishing-in-dockerhub-and-azure-github-docker-hub-azure-deploy-pipeline-part-4-d6efde5aca1e<br/>
+Part 4 : https://hasansahinn.medium.com/publishing-in-dockerhub-and-azure-github-docker-hub-azure-deploy-pipeline-part-4-d6efde5aca1e<br/><br/>
+
+
+Api url modification can be made using launchSettings or docker enviroment.

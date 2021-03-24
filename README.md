@@ -9,5 +9,5 @@ Part 2 : https://hasansahinn.medium.com/docker-file-and-net-core-project-github-
 Part 3 : https://hasansahinn.medium.com/github-actions-auto-test-github-docker-hub-azure-deploy-pipeline-part-3-105d9002acae<br/>
 Part 4 : https://hasansahinn.medium.com/publishing-in-dockerhub-and-azure-github-docker-hub-azure-deploy-pipeline-part-4-d6efde5aca1e<br/><br/>
 
-<b>Environment</b>
+<b>Environment</b><br/>
 Api url modification can be made using launchSettings or docker enviroment.

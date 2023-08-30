@@ -37,7 +37,7 @@ jobs:
        uses: docker/build-push-action@v2
        with:
           push: true
-          tags: hasansahinnn/testdeploy:latest
+          tags: sk9212k/testdeploy:latest
  
   create_new_container:
     needs: publish_to_docker
@@ -52,8 +52,8 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           docker rm -f $(docker ps -aq -f name=testdeploy)
-          docker rmi $(docker images | grep 'hasansahinnn/testdeploy' | awk '{print $3}')
-          docker pull hasansahinnn/testdeploy
-          docker run --name testdeploy -p 5000:80 --restart=always -d hasansahinnn/testdeploy
+          docker rmi $(docker images | grep 'sk9212k/testdeploy' | awk '{print $3}')
+          docker pull sk9212k/testdeploy
+          docker run --name testdeploy -p 5000:80 --restart=always -d sk9212k/testdeploy
       
   
